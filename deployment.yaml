@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: test-nginx
-          image: nginx:1.14.2
+          image: nginx:latest
           ports:
             - containerPort: 80
