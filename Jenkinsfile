@@ -1,5 +1,6 @@
 pipeline {
-    agent any
+    agent { label 'August_label' }  // Run on agent with kubectl installed
+
     environment {
         KUBECONFIG = credentials('kubeconfig-cred')   // kubeconfig stored in Jenkins
         NODE_IP = "16.170.208.209"                    // Node IP
