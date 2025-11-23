@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent any 
 
     environment {
         KUBECONFIG = credentials('kubeconfig-cred')   ## our kubeconfig in Jenkins
