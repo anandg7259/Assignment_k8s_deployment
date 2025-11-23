@@ -1,8 +1,14 @@
 pipeline {
-    agent any   
+    agent any
+
+    // Reference kubectl installed via Global Tool Configuration
+    tools {
+        kubectl 'kubectl'   // This should match the name you gave in Global Tool Configuration
+    }
+
     environment {
-        KUBECONFIG = credentials('kubeconfig-cred')   // our kubeconfig in Jenkins
-        NODE_IP = "16.170.208.209"                    // Node IP 
+        KUBECONFIG = credentials('kubeconfig-cred')   // kubeconfig stored in Jenkins
+        NODE_IP = "16.170.208.209"                    // Node IP
         NODE_PORT = "30001"                           // NodePort from your service
     }
 
