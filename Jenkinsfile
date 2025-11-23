@@ -7,9 +7,8 @@ pipeline {
     }
 
     stages {
-        stage('Checkout & Deploy') {
+        stage('Deploy') {
             steps {
-                git 'https://github.com/anandg7259/Assignment_k8s_deployment.git'
                 sh """
                   kubectl --kubeconfig $KUBECONFIG apply -f deployment.yaml
                   kubectl --kubeconfig $KUBECONFIG apply -f nodeport.yaml
